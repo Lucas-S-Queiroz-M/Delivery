@@ -37,8 +37,8 @@
         </button>
       </div>
     </div>
-    <br></br>
+    <br><br/>
     <div>
 
-        <a href="{{ route('login') }}" / target="_blank" id = 'cor-fonte'> Clik Aqui - Faça Seu Pedido</a>
+        <a href="{{ route('login') }}"  target="_blank" id = 'cor-fonte'> Clik Aqui - Faça Seu Pedido</a>
 @endsection

@@ -34,3 +34,4 @@ Route::get('/CadastroCardapio', 'CadastroCardapioController@CadastroCardapio')->
 Route::get('/login', 'LoginClienteController@login');
 Route::post('/logar', 'LoginClienteController@logar')->name('logar');
 Route::get('/logout', 'LoginClienteController@logout');
+Route::post('/acessar', 'LoginParceiroController@acessar')->name('acessar');

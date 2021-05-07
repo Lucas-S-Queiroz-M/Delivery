@@ -1,109 +1,45 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+@extends('Template')
 
-<head>
-    <meta charset="utf-8" />
-        
-        <title>Login Parceiro</title> 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>  
-        
-        <style>
-            body {
-                background-color: #09cf1959;
-                margin: 0px;
-                text-align: center;
-            }
-            #conteudo-principal {
-                background-color: rgb(219, 230, 228);
-            }
-    
-            .imagem {
-                border-radius: 10px;
-            }
-    
-            .btn-branco {
-                border: 3px solid white;
-                border-radius: 30px;
-            }
-            #fonte{
-                font-family:Arial, Helvetica, sans-serif;
-                text-align: center;
-                color: rgba(0, 100, 0);
-                text-decoration: none;
-                font-size: 20px   
-            }
-            .tamanho{
-                width: 300px;
-            }
-            
-            #cor-fonte{
-                color: rgba(0, 100, 0);    
-            }
-            .margem {
-                margin: 30px;
-            }
+@sectioN('conteudo')
+<br><br/>
 
-        </style>
-
-    </head>
-<body id = 'fonte'>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #09cf1959;">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">Delivery de Comidas</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="login.html">Entrar</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="cadastro.html">Faça seu cadastro</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="FaleConosco.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dúvidas
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  
-                  <li><a class="dropdown-item" href="FaleConosco.html">Fale Conosco</a></li>
-                  
-                  
-                </ul>
-              </li>
-              
-            </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
-              <button class="btn btn-outline-success" type="button" onclick=><a href="https://www.google.com.br/"/ target="_blank" id = 'cor-fonte'>Buscar</a></button>              
-            </form>
-          </div>
-        </div>
-      </nav>
 
     <div >
-        
-        <h1 style="margin: 5%;">Tela de Login Parceiro</h1>
-        <hr></hr>   
+
+        <h1 style="margin: 5%;">Tela de Login Fornecedor</h1>
+        <hr><hr/>
 
     </div>
 
+        @if(session('erro'))
+        <!-- LOGIN ou SENHA INCORRETA -->
+        <div class="alert alert-danger">
+            <strong>Erro!</strong> {{session('erro')}}
+        </div>
+        <!-- FIM [LOGIN OU SENHA INCORRETA] -->
+        @endif
+
         <div >
-        </br>
-            <label for="nome" /  id = 'cor-fonte'>E-mail:</label>
-            <input type="text" id="nome" name="nome" placeholder="e-mail"><br></br>
-            <label for="senha" /  id = 'cor-fonte'>Senha:</label>
-            <input type="password" name="senha" placeholder="senha"><br></br>
-            <button type="button" onclick=><a href="Cadastro-Parceiro.html"/ target="_blank" id = 'cor-fonte'> Cadastre-se</a></button>
-            <button type="button" onclick=><a href="cardapio.html"/ target="_blank" id = 'cor-fonte'> Entrar</a></button>
+        <br/>
+        <form action="{{ route('acessar') }}" method="POST">
+            @csrf
+            <div class="form-group">
+            <label for="email"  id = 'cor-fonte'>E-mail:</label>
+            <input type="email"  id="campo-email" name="email" placeholder="e-mail">
+            </div>
+            <br><br/>
+            <div class="form-group">
+            <label for="senha"   id = 'cor-fonte'>Senha:</label>
+            <input type="password" name="senha" placeholder="senha">
+            </div>
+            <br><br/>
+            <button type="button" ><a href="{{ route('CadastroCliente') }}" target="_blank" id = 'cor-fonte'> Cadastre-se</a></button>
+            <button id='cor-fonte'> Entrar</button>
         </form>
-        <hr></hr>
+        <hr><hr/>
         <h2 style="margin: 5%;">Seja bem vindo!</h2>
-        <hr></hr>
+        <hr><hr/>
         </div>
         <script src="acesso.js" type="text/javascript"></script>
-</body>
 
-</html>
+@endsection

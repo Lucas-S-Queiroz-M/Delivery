@@ -19,8 +19,6 @@
         <!-- FIM [LOGIN OU SENHA INCORRETA] -->
         @endif
 
-
-        <!-- Fim do erro-->
         <div >
         <br/>
         <form action="{{ route('logar') }}" method="POST">
