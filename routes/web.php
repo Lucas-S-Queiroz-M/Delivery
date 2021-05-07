@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/index', 'HomeController@index')->name('index');
-Route::get('/login', 'LoginClienteController@login')->name('login');
+Route::get('/', 'LoginClienteController@login')->name('login');
 Route::get('/loginParceiro', 'LoginParceiroController@loginParceiro')->name('loginParceiro');
 Route::get('/CadastroParceiro', 'CadastroParceiroController@CadastroParceiro')->name('CadastroParceiro');
 Route::get('/CadastroCliente', 'CadastroClienteController@CadastroCliente')->name('CadastroCliente');
@@ -31,3 +31,6 @@ Route::get('/CadastradoComSucesso', 'CadastradoComSucessoController@CadastradoCo
 Route::get('/CadastradoComSucessoFornecedor', 'CadastradoComSucessoFornecedorController@CadastradoComSucessoFornecedor')->name('CadastradoComSucessoFornecedor');
 Route::get('/Carrinho', 'CarrinhoController@Carrinho')->name('Carrinho');
 Route::get('/CadastroCardapio', 'CadastroCardapioController@CadastroCardapio')->name('CadastroCardapio');
+Route::get('/login', 'LoginClienteController@login');
+Route::post('/logar', 'LoginClienteController@logar')->name('logar');
+Route::get('/logout', 'LoginClienteController@logout');
