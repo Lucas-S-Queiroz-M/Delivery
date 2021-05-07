@@ -11,19 +11,32 @@
 
     </div>
 
-        <!-- Login ou senha incorreta -->
-        <div>
-            <strong>Erro!</strong> Login ou Senha Incorreta!
-        </div>
+        @if(session('erro'))
+        <!-- LOGIN ou SENHA INCORRETA -->
+        <div class="alert alert-danger">
+            <strong>Erro!</strong> {{session('erro')}}
+        </div>
+        <!-- FIM [LOGIN OU SENHA INCORRETA] -->
+        @endif
+
+
+        <!-- Fim do erro-->
         <div >
         <br/>
-        <form action="{{ route('logar') }}" method="post">
-            <label for="nome"  id = 'cor-fonte'>E-mail:</label>
-            <input type="text" id="nome" name="nome" placeholder="e-mail"><br><br/>
+        <form action="{{ route('logar') }}" method="POST">
+            @csrf
+            <div class="form-group">
+            <label for="email"  id = 'cor-fonte'>E-mail:</label>
+            <input type="email"  id="campo-email" name="email" placeholder="e-mail">
+            </div>
+            <br><br/>
+            <div class="form-group">
             <label for="senha"   id = 'cor-fonte'>Senha:</label>
-            <input type="password" name="senha" placeholder="senha"><br><br/>
-            <button type="button" onclick=><a href="{{ route('CadastroCliente') }}" target="_blank" id = 'cor-fonte'> Cadastre-se</a></button>
-            <button type="button" onclick=><a href="{{ route('Cardapio') }}" target="_blank" id = 'cor-fonte'> Entrar</a></button>
+            <input type="password" name="senha" placeholder="senha">
+            </div>
+            <br><br/>
+            <button type="button" ><a href="{{ route('CadastroCliente') }}" target="_blank" id = 'cor-fonte'> Cadastre-se</a></button>
+            <button id='cor-fonte'> Entrar</button>
         </form>
         <hr><hr/>
         <h2 style="margin: 5%;">Seja bem vindo!</h2>
