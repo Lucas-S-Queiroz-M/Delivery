@@ -6,7 +6,15 @@
         <div align="center">
             <br/><br/>
             <h1 > CADASTRO DE PARCEIRO</h1>
-
+            <br/>
+            @if(session('sucesso'))
+                <!-- LOGIN ou SENHA INCORRETA -->
+                <div class="alert alert-secess">
+                    {{session('sucesso')}}
+               </div>
+                <!-- FIM [LOGIN OU SENHA INCORRETA] -->
+            @endif
+            <br/>
 
             <h4 >Preencha seus dados:</h4><br/>
             <p >Empresa: Razão Social:</p>
@@ -148,8 +156,8 @@
                     <input name="pais" type="text" id="país" size="10" placeholder="País: Brasil"/></label><br/>
                     <br/>
 
-                    <button type="button" onclick=><a href="index.html" target="_blank" id = 'cor-fonte'>Cancelar</a></button>
-                    <button type="button" onclick=><a href="Cadastrado com Sucesso Fornecedor.html" target="_blank" id = 'cor-fonte'>Confirmar</a></button>   </p>
+                    <button type="button" ><a href="{{ route('index') }}" target="_blank" id = 'cor-fonte'> Cancelar</a></button>
+                    <button type="button" ><a href="{{ route('CadastradoComSucessoFornecedor') }}" target="_blank" id = 'cor-fonte'> Confirmar</a></button>
                 </form>
             </body>
 
@@ -157,6 +165,5 @@
 
         </div>
         <script src="acesso.js" type="text/javascript"></script>
-    </body>
 
-    </html>
+@endsection

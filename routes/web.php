@@ -35,3 +35,4 @@ Route::get('/login', 'LoginClienteController@login');
 Route::post('/logar', 'LoginClienteController@logar')->name('logar');
 Route::get('/logout', 'LoginClienteController@logout');
 Route::post('/acessar', 'LoginParceiroController@acessar')->name('acessar');
+Route::get('/CadastradoComSucessoCardapio', 'CadastradoComSucessoCardapioController@CadastradoComSucessoCardapio')->name('CadastradoComSucessoCardapio');

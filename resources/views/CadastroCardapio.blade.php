@@ -35,8 +35,15 @@
                 <input name="nome" type="text" size="8" placeholder="Quantidade:"/></p>
                 <br/><br/>
 
-                <button type="button" onclick=><a href="index.html"/ target="_blank" id = 'cor-fonte'>Voltar para o Inicio</a></button>
-                <button type="button" onclick=><a href=".html"/ target="_blank" id = 'cor-fonte'>Confirmar cadastro</a></button>
+                <!-- Imagem -->
+                <div class="form-group">
+                    <label>Insira uma foto ou imagem do Prato:</label><br/><br/>
+                    <input type="file" class="form-control" name="capa">
+                </div>
+                <br/><br/>
+
+                <button type="button" ><a href="{{ route('index') }}" target="_blank" id = 'cor-fonte'> Cancelar</a></button>
+                <button type="button" ><a href="{{ route('CadastradoComSucessoCardapio') }}" target="_blank" id = 'cor-fonte'> Confirmar</a></button>
 
 
             </div>

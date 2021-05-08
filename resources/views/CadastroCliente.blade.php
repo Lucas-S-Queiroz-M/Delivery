@@ -4,34 +4,42 @@
 <br><br/>
 
         <div align="center">
-            <br></br>
+            <br>
             <h1 > CADASTRO DE CLIENTE</h1>
-            <br></br>
-
+            <br>
+            <br/>
+            @if(session('sucesso'))
+                <!-- LOGIN ou SENHA INCORRETA -->
+                <div class="alert alert-secess">
+                    {{session('sucesso')}}
+               </div>
+                <!-- FIM [LOGIN OU SENHA INCORRETA] -->
+            @endif
+            <br/>
             <h4 >Preencha seus dados:</h4>
-            <br><p >Nome completo:</br>
+            <br><p >Nome completo:<p>
             <input name="nome" type="text" size="40" placeholder="Nome completo:"/></p>
 
-            <p >Idade:</br>
+            <label>Idade:</label>
             <input name="nome" type="text" size="2" placeholder="Idade:"/></p>
 
-            <p >CPF:</br>
+            <label>CPF:</label>
             <input name="nome" type="text" size="10" placeholder="CPF:"/></p>
 
-            <p >Telefone:</br>
+            <label>Telefone:</label>
             <input name="nome" type="text" size="20" placeholder="N° Telefone:"/></p>
 
 
-            <p >E-mail:</br>
+            <label>E-mail:</label>
             <input name="email" type="text" size="40" placeholder="e-mail:"/></p>
 
-            <h4 >Criar Senha</h4></br>
-            <label for="senha" /  >Insira sua senha:</label></br>
-            <input type="password" name="senha" placeholder="Insira sua senha:"></br>
-            <label for="senha" /  >Confirme sua senha:</label></br>
-            <input type="password" name="senha" placeholder="Confirme sua senha:"></br>
+            <h4 >Criar Senha</h4><p>
+            <label for="senha">Insira sua senha:</label><p>
+            <input type="password" name="senha" placeholder="Insira sua senha:"><p>
+            <label for="senha">Confirme sua senha:</label><p>
+            <input type="password" name="senha" placeholder="Confirme sua senha:"><p>
 
-            </br>
+            <p>
             <h4 >Endereço:</h4>
             <html>
 
@@ -114,34 +122,34 @@
             <body>
                 <!-- Inicio do formulario -->
                 <form method="get" action=".">
-                    </br>
-                    <label >Cep:</br>
+                    <br/>
+                    <label >Cep:</label>
                     <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
-                           onblur="pesquisacep(this.value);" placeholder="CEP:"/></label><br />
-                    </br>
-                    <label >Rua:</br>
-                    <input name="rua" type="text" id="rua" size="60" placeholder="Rua:"/></label><br />
-                    </br>
-                    <label >Bairro:</br>
-                    <input name="bairro" type="text" id="bairro" size="40" placeholder="Bairro:"/></label><br />
-                    </br>
+                           onblur="pesquisacep(this.value);" placeholder="CEP:"/><br/>
+                    <br/>
+                    <label >Rua:</label>
+                    <input name="rua" type="text" id="rua" size="60" placeholder="Rua:"/></label><br/>
+                    <br/>
+                    <label >Bairro:</label>
+                    <input name="bairro" type="text" id="bairro" size="40" placeholder="Bairro:"/></label><br/>
+                    <br/>
 
-                    <label >Complemento:</br>
+                    <label >Complemento:</label>
                     <input name="nome" type="text" size="50" placeholder="Complemento:"/>
                     <p></p>
-                    </br>
-                    <label >Cidade:</br>
-                    <input name="cidade" type="text" id="cidade" size="40" placeholder="Cidade:"/></label><br />
-                    </br>
-                    <label >Estado:</br>
-                    <input name="uf" type="text" id="uf" size="2" placeholder="Estado:"/></label><br />
-                    </br>
-                    <label >País:</br>
-                    <input name="pais" type="text" id="país" size="10" placeholder="País: Brasil"/></label><br />
+                    <br/>
+                    <label >Cidade:</label>
+                    <input name="cidade" type="text" id="cidade" size="40" placeholder="Cidade:"/></label><br/>
+                    <br/>
+                    <label >Estado:</label>
+                    <input name="uf" type="text" id="uf" size="2" placeholder="Estado:"/></label><br/>
+                    <br/>
+                    <label >País:</label>
+                    <input name="pais" type="text" id="país" size="10" placeholder="País: Brasil"/></label><br/>
 
-                    </br>
-                    <button type="button" onclick=><a href="index.html"/ target="_blank" id = 'cor-fonte'>Cancelar</a></button>
-                    <button type="button" onclick=><a href="Cadastrado com Sucesso.html"/ target="_blank" id = 'cor-fonte'>Confirmar</a></button>   </p>
+                    <br/>
+                    <button type="button" ><a href="{{ route('index') }}" target="_blank" id = 'cor-fonte'> Cancelar</a></button>
+                    <button type="button" ><a href="{{ route('CadastradoComSucesso') }}" target="_blank" id = 'cor-fonte'> Confirmar</a></button>
                 </form>
             </body>
 

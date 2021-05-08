@@ -17,10 +17,7 @@ class LoginClienteController extends Controller {
     */
     public function logar(Request $r){
 
-        // echo $r->input('email');
         if ($r->email == 'teste@teste.com' && $r->senha == '123456')
-        // echo $r->input('senha');
-        // echo 'Realizar login';
 
             return redirect()->route('Cardapio');
         else
